@@ -16,6 +16,10 @@ import { ErrorComponent } from './error/error.component';
 import { RouterModule } from '@angular/router';
 import { APP_ROUTES } from './app.routes';
 import { BasketComponent } from './basket/basket.component';
+import { CityValidatorDirective } from './shared/validation/city-validator.directive';
+import { RoundTripDirective } from './shared/validation/round-trip.directive';
+import { AsyncCityValidatorDirective } from './shared/validation/async-city-validator.directive';
+import { OAuthModule } from 'angular-oauth2-oidc';
 
 @NgModule({
   imports: [
@@ -23,7 +27,8 @@ import { BasketComponent } from './basket/basket.component';
     FormsModule,
     HttpClientModule,
     FlightBookingModule,
-    RouterModule.forRoot(APP_ROUTES)
+    RouterModule.forRoot(APP_ROUTES),
+    OAuthModule.forRoot()
   ],
   declarations: [
     AppComponent,
